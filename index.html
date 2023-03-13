@@ -813,6 +813,44 @@
                     <img src="images/Panel.jpeg" alt="Image 4">
                     </div>
 
+                    <div class="nav">
+        <button class="prev">Previous</button>
+        <button class="next">Next</button>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script>
+        $(document).ready(function() {
+            var currentIndex = 0;
+            var images = $('.gallery img');
+            var imageCount = images.length;
+
+            function showImage(index) {
+                if (index < 0) {
+                    index = imageCount - 1;
+                } else if (index >= imageCount) {
+                    index = 0;
+                }
+
+                images.removeClass('active');
+                images.eq(index).addClass('active');
+                currentIndex = index;
+            }
+
+            $('.prev').click(function() {
+                showImage(currentIndex - 1);
+            });
+
+            $('.next').click(function() {
+                showImage(currentIndex + 1);
+            });
+
+            setInterval(function() {
+                showImage(currentIndex + 1);
+            }, 5000);
+        });
+    </script>
+    
+
                 </span>
 
             </div>
