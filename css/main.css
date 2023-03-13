@@ -12,6 +12,24 @@ body, html {
 	font-family: sans-serif;
 }
 
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery img {
+  max-width: 630px;
+  margin: 10px;
+  border: 1px solid black;
+  border-radius: 5px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
 /* ------------------------------------ */
 a {
 	margin: 0px;
